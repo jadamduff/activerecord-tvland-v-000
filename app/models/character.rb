@@ -11,10 +11,4 @@ class Character < ActiveRecord::Base
       x.name = attr[:name]
     end
   end
-
-  def build_network(attr = {})
-    Network.create do |x|
-      x.call_letters = "Fox"
-    end
-  end
 end
