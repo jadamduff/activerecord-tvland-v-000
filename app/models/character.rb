@@ -9,9 +9,9 @@ class Character < ActiveRecord::Base
   def build_show(attr)
     Show.create do |x|
       x.name = attr[:name]
-      x.day = attr[:day]
-      x.season = attr[:season]
-      x.genre = attr[:genre]
+      x.day = attr[:day] || nil
+      x.season = attr[:season] || nil
+      x.genre = attr[:genre] || nil
     end
   end
 end
