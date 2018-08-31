@@ -7,11 +7,12 @@ class Character < ActiveRecord::Base
   end
 
   def build_show(attr = {})
-    Show.create do |x|
+    show = Show.create do |x|
       x.name = attr[:name]
       x.day = attr[:day] || nil
       x.season = attr[:season] || nil
       x.genre = attr[:genre] || nil
     end
+    self.show = show
   end
 end
