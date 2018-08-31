@@ -4,8 +4,10 @@ class Show < ActiveRecord::Base
   belongs_to :network
 
   def build_network(attr = {})
-    Network.create do |x|
-      x.call_letters = "Fox"
+    network = Network.create do |x|
+      x.call_letters = attr[:call_letters]
+      x.channel = attr[:channel]
     end
+    self.network = network
   end
 end
