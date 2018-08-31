@@ -11,6 +11,7 @@ class Character < ActiveRecord::Base
       x.name = attr[:name]
       x.day = attr[:day]
       x.season = attr[:season]
+      x.genre = attr[:genre]
     end
   end
 end
